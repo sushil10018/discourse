@@ -261,6 +261,7 @@ Discourse::Application.routes.draw do
   get "signup" => "static#show", id: "signup"
   get "login-preferences" => "static#show", id: "login"
 
+  get "current_users" => "users#index"
   get "users/admin-login" => "users#admin_login"
   put "users/admin-login" => "users#admin_login"
   get "users/admin-login/:token" => "users#admin_login"

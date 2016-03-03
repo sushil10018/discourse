@@ -56,6 +56,7 @@ export default function() {
   });
 
   // User routes
+  this.resource('users', { path: '/current_users' });
   this.resource('users');
   this.resource('user', { path: '/users/:username' }, function() {
     this.route('summary');
