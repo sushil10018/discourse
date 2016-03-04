@@ -29,6 +29,9 @@ class UsersController < ApplicationController
   def index
   end
 
+  def current_users
+  end
+
   def show
     raise Discourse::InvalidAccess if SiteSetting.hide_user_profiles_from_public && !current_user
 
