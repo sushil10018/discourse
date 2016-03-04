@@ -43,6 +43,10 @@ class TopTopic < ActiveRecord::Base
     @@periods ||= [:all, :yearly, :quarterly, :monthly, :weekly, :daily].freeze
   end
 
+  def self.current_periods
+    @@current_periods ||= [:first_quarterly, :second_quarterly, :third_quarterly, :fourth_quarterly].freeze
+  end
+
   def self.sorted_periods
     ascending_periods ||= Enum.new(daily: 1,
                                    weekly: 2,

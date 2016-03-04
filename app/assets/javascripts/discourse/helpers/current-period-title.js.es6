@@ -1,17 +1,15 @@
-const TITLE_SUBS = {
-  all: 'all_time',
-  yearly: 'this_year',
-  quarterly: 'this_quarter',
-  monthly: 'this_month',
-  daily: 'today',
-  test: 'this_test',
+const CURRENT_TITLE_SUBS = {
+  first_quarterly: 'first_quarter',
+  second_quarterly: 'second_quarter',
+  third_quarterly: 'third_quarter',
+  fourth_quarterly: 'fourth_quarter',
 };
 
-export default Ember.Handlebars.makeBoundHelper(function (period, options) {
-  const title = I18n.t('filters.top.' + (TITLE_SUBS[period] || 'this_week'));
+export default Ember.Handlebars.makeBoundHelper(function (current_period, options) {
+  const title = I18n.t('filters.top.' + (CURRENT_TITLE_SUBS[current_period] || 'this_week'));
   if (options.hash.showDateRange) {
     var dateString = "";
-    switch(period) {
+    switch(current_period) {
       case 'yearly':
         dateString = moment().subtract(1, 'year').format(I18n.t('dates.long_with_year_no_time')) + " - " + moment().format(I18n.t('dates.long_with_year_no_time'));
         break;

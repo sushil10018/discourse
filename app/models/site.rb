@@ -80,6 +80,7 @@ class Site
     if guardian.anonymous? && SiteSetting.login_required
       return {
         periods: TopTopic.periods.map(&:to_s),
+        current_periods: TopTopic.current_periods.map(&:to_s),
         filters: Discourse.filters.map(&:to_s),
         user_fields: UserField.all.map do |userfield|
           UserFieldSerializer.new(userfield, root: false, scope: guardian)

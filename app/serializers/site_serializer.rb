@@ -57,6 +57,10 @@ class SiteSerializer < ApplicationSerializer
     TopTopic.periods.map(&:to_s)
   end
 
+  def current_periods
+    TopTopic.current_periods.map(&:to_s)
+  end
+
   def top_menu_items
     Discourse.top_menu_items.map(&:to_s)
   end

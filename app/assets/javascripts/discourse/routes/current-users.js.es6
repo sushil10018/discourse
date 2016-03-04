@@ -1,6 +1,6 @@
 export default Discourse.Route.extend({
   queryParams: {
-    period: { refreshModel: true },
+    current_period: { refreshModel: true },
     order: { refreshModel: true },
     asc: { refreshModel: true },
     name: { refreshModel: true, replace: true }
@@ -15,7 +15,7 @@ export default Discourse.Route.extend({
   resetController(controller, isExiting) {
     if (isExiting) {
       controller.setProperties({
-        period: "weekly",
+        current_period: "first_quarterly",
         order: "likes_received",
         asc: null,
         name: ""
@@ -37,7 +37,7 @@ export default Discourse.Route.extend({
 
   setupController(controller, model) {
     const params = this._params;
-    controller.setProperties({ model, period: params.period, nameInput: params.name });
+    controller.setProperties({ model, current_period: params.current_period, nameInput: params.name });
   },
 
   actions: {
