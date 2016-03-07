@@ -32,9 +32,9 @@ export default Ember.Component.extend(CleansUp, {
   },
 
   actions: {
-    changePeriod(p) {
+    changeCurrentPeriod(p) {
       this.cleanUp();
-      this.set('period', p);
+      this.set('current_period', p);
       this.sendAction('action', p);
     }
   }

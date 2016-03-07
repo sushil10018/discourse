@@ -32,6 +32,8 @@ Discourse::Application.routes.draw do
 
   resources :directory_items
 
+  resources :current_directory_items
+
   get "site" => "site#site"
   namespace :site do
     get "settings"

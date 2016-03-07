@@ -9,7 +9,7 @@ export default Discourse.Route.extend({
   refreshQueryWithoutTransition: true,
 
   titleToken() {
-    return I18n.t("directory.title");
+    return I18n.t("current_directory.title");
   },
 
   resetController(controller, isExiting) {
@@ -32,7 +32,7 @@ export default Discourse.Route.extend({
   model(params) {
     // If we refresh via `refreshModel` set the old model to loading
     this._params = params;
-    return this.store.find("directoryItem", params);
+    return this.store.find("currentDirectoryItem", params);
   },
 
   setupController(controller, model) {
