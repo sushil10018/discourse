@@ -5,21 +5,22 @@ const CURRENT_TITLE_SUBS = {
   fourth_quarterly: 'fourth_quarter',
 };
 
+// TODO @sushil10018: Place the date time properly in details.
 export default Ember.Handlebars.makeBoundHelper(function (current_period, options) {
   const title = I18n.t('filters.top.' + (CURRENT_TITLE_SUBS[current_period] || 'this_week'));
   if (options.hash.showDateRange) {
     var dateString = "";
     switch(current_period) {
-      case 'yearly':
+      case 'first_quarterly':
         dateString = moment().subtract(1, 'year').format(I18n.t('dates.long_with_year_no_time')) + " - " + moment().format(I18n.t('dates.long_with_year_no_time'));
         break;
-      case 'quarterly':
+      case 'second_quarterly':
         dateString = moment().subtract(3, 'month').format(I18n.t('dates.long_no_year_no_time')) + " - " + moment().format(I18n.t('dates.long_no_year_no_time'));
         break;
-      case 'weekly':
+      case 'third_quarterly':
         dateString = moment().subtract(1, 'week').format(I18n.t('dates.long_no_year_no_time')) + " - " + moment().format(I18n.t('dates.long_no_year_no_time'));
         break;
-      case 'monthly':
+      case 'fourth_quarterly':
         dateString = moment().subtract(1, 'month').format(I18n.t('dates.long_no_year_no_time')) + " - " + moment().format(I18n.t('dates.long_no_year_no_time'));
         break;
       case 'daily':

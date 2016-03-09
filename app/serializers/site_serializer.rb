@@ -6,6 +6,7 @@ class SiteSerializer < ApplicationSerializer
              :groups,
              :filters,
              :periods,
+             :current_periods,
              :top_menu_items,
              :anonymous_top_menu_items,
              :uncategorized_category_id, # this is hidden so putting it here
