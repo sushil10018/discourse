@@ -15,7 +15,7 @@ class CurrentDirectoryItemSerializer < ApplicationSerializer
   end
 
   def include_time_read?
-    object.period_type == CurrentDirectoryItem.period_types[:all]
+    object.current_period_type == CurrentDirectoryItem.current_period_types[:first_quarterly]
   end
 
 end

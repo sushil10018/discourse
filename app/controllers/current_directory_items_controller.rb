@@ -64,7 +64,7 @@ class CurrentDirectoryItemsController < ApplicationController
 
     end
 
-    render_json_dump(directory_items: serialize_data(result, CurrentDirectoryItemSerializer),
+    render_json_dump(current_directory_items: serialize_data(result, CurrentDirectoryItemSerializer),
                      total_rows_directory_items: result_count,
                      load_more_directory_items: current_directory_items_path(more_params))
   end

@@ -4,6 +4,8 @@ module Jobs
 
     def execute(args)
       DirectoryItem.refresh_period!(:daily)
+      
+      CurrentDirectoryItem.refresh_period!(:first_quarterly)
     end
   end
 end
