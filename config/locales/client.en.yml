@@ -351,7 +351,7 @@ en:
 
     current_directory:
       filter_name: "filter by username"
-      title: "Users"
+      title: "Current Users"
       likes_given: "Given"
       likes_received: "Received"
       topics_entered: "Entered"
