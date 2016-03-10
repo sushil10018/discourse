@@ -28,13 +28,11 @@ class CurrentDirectoryItem < ActiveRecord::Base
     # Don't calculate it if the user directory is disabled
     return unless SiteSetting.enable_user_directory?
 
-    # TODO @sushil10018: The period ranges to be set properly
     since = case current_period_type
-            when :first_quarterly then 1.day.ago
-            when :second_quarterly then 1.week.ago
-            when :third_quarterly then 1.month.ago
-            when :fourth_quarterly then 3.months.ago
-            when :yearly then 1.year.ago
+            when :first_quarterly then Time.zone.now.beginning_of_year
+            when :second_quarterly then (Time.zone.now.beginning_of_year + 3.months)
+            when :third_quarterly then (Time.zone.now.beginning_of_year + 6.months)
+            when :fourth_quarterly then (Time.zone.now.beginning_of_year + 9.months)
             else 1000.years.ago
             end
 
