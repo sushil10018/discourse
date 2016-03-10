@@ -16,7 +16,7 @@ export default Discourse.Route.extend({
     if (isExiting) {
       controller.setProperties({
         current_period: "first_quarterly",
-        order: "likes_received",
+        order: "total_participation",
         asc: null,
         name: ""
       });

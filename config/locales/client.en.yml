@@ -366,6 +366,7 @@ en:
       days_visited_long: "Days Visited"
       posts_read: "Read"
       posts_read_long: "Posts Read"
+      total_participation: "Total Participation"
       total_rows:
         one: "1 user"
         other: "%{count} users"

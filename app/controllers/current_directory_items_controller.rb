@@ -10,15 +10,12 @@ class CurrentDirectoryItemsController < ApplicationController
 
     result = CurrentDirectoryItem.where(current_period_type: current_period_type).includes(:user)
 
-    order = params[:order] || CurrentDirectoryItem.headings.first
+    order = params[:order] || CurrentDirectoryItem.headings.last
     if CurrentDirectoryItem.headings.include?(order.to_sym)
       dir = params[:asc] ? 'ASC' : 'DESC'
       result = result.order("current_directory_items.#{order} #{dir}")
     end
-
-    if current_period_type == CurrentDirectoryItem.current_period_types[:all]
-      result = result.includes(:user_stat)
-    end
+    
     page = params[:page].to_i
 
     user_ids = nil

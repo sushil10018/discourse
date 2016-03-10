@@ -4,7 +4,7 @@ export default Ember.Controller.extend({
   needs: ["application"],
   queryParams: ["current_period", "order", "asc", "name"],
   current_period: current_quarter_of_the_year(),
-  order: "likes_received",
+  order: "total_participation",
   asc: null,
   name: "",
 
