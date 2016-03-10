@@ -1902,6 +1902,10 @@ en:
         this_week: "Week"
         today: "Today"
         other_periods: "see top"
+        first_quarter: "First Quarter"
+        second_quarter: "Second Quarter"
+        third_quarter: "Third Quarter"
+        fourth_quarter: "Fourth Quarter"
 
     browser_update: 'Unfortunately, <a href="http://www.discourse.org/faq/#browser">your browser is too old to work on this site</a>. Please <a href="http://browsehappy.com">upgrade your browser</a>.'
 
