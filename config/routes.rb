@@ -32,6 +32,8 @@ Discourse::Application.routes.draw do
 
   resources :directory_items
 
+  resources :current_directory_items
+
   get "site" => "site#site"
   namespace :site do
     get "settings"
@@ -261,6 +263,7 @@ Discourse::Application.routes.draw do
   get "signup" => "static#show", id: "signup"
   get "login-preferences" => "static#show", id: "login"
 
+  get "userpostcount" => "users#index"
   get "users/admin-login" => "users#admin_login"
   put "users/admin-login" => "users#admin_login"
   get "users/admin-login/:token" => "users#admin_login"

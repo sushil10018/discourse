@@ -6,6 +6,7 @@ class SiteSerializer < ApplicationSerializer
              :groups,
              :filters,
              :periods,
+             :current_periods,
              :top_menu_items,
              :anonymous_top_menu_items,
              :uncategorized_category_id, # this is hidden so putting it here
@@ -55,6 +56,10 @@ class SiteSerializer < ApplicationSerializer
 
   def periods
     TopTopic.periods.map(&:to_s)
+  end
+
+  def current_periods
+    TopTopic.current_periods.map(&:to_s)
   end
 
   def top_menu_items
